@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form>
+    <input type="number" id="Num">
+    <input type="number" id="Nums">
+    <button type="button" id="multiply" onclick="getinfo('multiply')">Multiply</button>
+    <button type="button" id="add" onclick="getinfo('add')">Add</button>
+   </form> 
+
+   <p id="result"></p>
+
+   <script>
+    function getinfo(operation){
+        let first = document.getElementById("Num").value;
+        let second = document.getElementById("Nums").value;
+
+        // Ensure valid input before performing the operation
+        if(first === '' || second === '') {
+            alert('Please enter both numbers');
+            return;
+        }
+
+        first = Number(first);
+        second = Number(second);
+
+        let result;
+        
+        if(operation === 'multiply') {
+            result = first * second;
+        } else if(operation === 'add') {
+            result = first + second;
+        }
+
+        // Display the result
+        document.getElementById("result").innerText = `Result: ${result}`;
+        console.log(result); // Output the result to the console as well
+    }
+   </script>
+    
+</body>
+</html>
